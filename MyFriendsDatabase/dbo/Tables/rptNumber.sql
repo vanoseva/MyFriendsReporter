@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[rptNumber] (
+    [ID]               NVARCHAR (50)  NULL,
+    [Object_ID]        NVARCHAR (50)  NULL,
+    [DayMonth]         SMALLDATETIME  NULL,
+    [NumberID]         NVARCHAR (50)  NULL,
+    [Note]             NVARCHAR (255) NULL,
+    [InstockBegin]     MONEY          NULL,
+    [Debt]             MONEY          NULL,
+    [Pay]              MONEY          NULL,
+    [PayReturn]        MONEY          NULL,
+    [Commission]       MONEY          NULL,
+    [PayCommission]    MONEY          NULL,
+    [ReturnCommission] MONEY          NULL,
+    [Instock]          MONEY          NULL,
+    [f_Per]            FLOAT (53)     NULL,
+    [m_Per]            MONEY          NULL,
+    [KeyNumber]        NVARCHAR (50)  NULL,
+    [IDSort]           INT            NULL,
+    [nDayOver]         INT            NULL,
+    [nDay]             INT            NULL,
+    [OrderID]          NVARCHAR (50)  NULL,
+    [s_EmployeeID]     NVARCHAR (50)  NULL,
+    [Curr]             NVARCHAR (50)  NULL,
+    [Exchange]         FLOAT (53)     NULL
+);
+

@@ -1,0 +1,7 @@
+﻿
+CREATE  Procedure  [dbo].[sp_CheckDulicate_OtherIncome](@name nvarchar(50),@id nvarchar(50))
+as
+	if @id is not null
+		Select count(*) as C from [LS_OtherIncome] where s_name=@name and i_id<>@id
+	else
+		Select count(*) as C from [LS_OtherIncome] where s_name=@name 

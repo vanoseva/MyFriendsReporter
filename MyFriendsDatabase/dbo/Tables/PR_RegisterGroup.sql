@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[PR_RegisterGroup] (
+    [BK_ID]         NVARCHAR (50)  NULL,
+    [s_ID]          NVARCHAR (50)  NOT NULL,
+    [GroupName]     NVARCHAR (100) NOT NULL,
+    [Company]       NVARCHAR (50)  NULL,
+    [TravelPermit]  NVARCHAR (50)  NULL,
+    [From_date]     SMALLDATETIME  NULL,
+    [To_date]       SMALLDATETIME  NULL,
+    [Serv]          FLOAT (53)     NULL,
+    [Curr]          NVARCHAR (255) NULL,
+    [Discount]      FLOAT (53)     NULL,
+    [Note]          NVARCHAR (255) NOT NULL,
+    [Pers]          SMALLINT       NULL,
+    [Vat]           FLOAT (53)     NULL,
+    [Payment]       NVARCHAR (50)  NULL,
+    [CaLV]          NVARCHAR (50)  NULL,
+    [IDSort]        NUMERIC (18)   NULL,
+    [UCreate]       NVARCHAR (50)  NULL,
+    [dtCreate]      SMALLDATETIME  NULL,
+    [UEdit]         NVARCHAR (50)  NULL,
+    [dtEdit]        SMALLDATETIME  NULL,
+    [Checkout_Date] SMALLDATETIME  NULL,
+    [Child]         INT            DEFAULT ((0)) NULL,
+    [SegmID]        INT            NULL,
+    [LimitID]       NVARCHAR (50)  NULL,
+    CONSTRAINT [PK_PR_RegisterGroup] PRIMARY KEY CLUSTERED ([s_ID] ASC)
+);
+

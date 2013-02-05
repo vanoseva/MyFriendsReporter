@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[PR_PurchaseOrderDetails] (
+    [s_ID]                             NVARCHAR (50)  CONSTRAINT [DF__PR_Purchas__s_ID__5224328E] DEFAULT (newid()) NOT NULL,
+    [s_OrderID]                        NVARCHAR (50)  NOT NULL,
+    [s_Product_ID]                     NVARCHAR (50)  NULL,
+    [f_Quantity]                       FLOAT (53)     CONSTRAINT [DF__PR_Purcha__f_Qua__531856C7] DEFAULT ((0)) NULL,
+    [f_QuantitySend]                   FLOAT (53)     CONSTRAINT [DF_PR_PurchaseOrderDetails_f_QuantitySend] DEFAULT ((0)) NULL,
+    [m_Price]                          MONEY          CONSTRAINT [DF__PR_Purcha__m_Pri__540C7B00] DEFAULT ((0)) NULL,
+    [f_Discount]                       FLOAT (53)     CONSTRAINT [DF__PR_Purcha__f_Dis__55009F39] DEFAULT ((0)) NULL,
+    [m_Discount]                       MONEY          CONSTRAINT [DF_PR_PurchaseOrderDetails_m_Discount] DEFAULT ((0)) NULL,
+    [f_VAT]                            FLOAT (53)     CONSTRAINT [DF_PR_PurchaseOrderDetails_f_VAT] DEFAULT ((0)) NULL,
+    [s_Store_ID]                       NVARCHAR (50)  NULL,
+    [s_Unit]                           NVARCHAR (50)  NULL,
+    [f_Convert]                        FLOAT (53)     CONSTRAINT [DF__PR_Purcha__f_Con__55F4C372] DEFAULT ((0)) NULL,
+    [s_Note]                           NVARCHAR (500) NULL,
+    [i_nDaySend]                       INT            CONSTRAINT [DF_PR_PurchaseOrderDetails_i_nDaySend] DEFAULT ((0)) NULL,
+    [i_Ordinal]                        NUMERIC (18)   IDENTITY (1, 1) NOT NULL,
+    [b_isDiscountProduct]              BIT            CONSTRAINT [DF_PR_PurchaseOrderDetails_b_isDiscountProduct] DEFAULT ((0)) NULL,
+    [s_DiscountDetail_ID]              NVARCHAR (50)  NULL,
+    [s_DiscountProductDetail_ID]       NVARCHAR (50)  NULL,
+    [s_DiscountProductDetail_Level_ID] NVARCHAR (50)  NULL,
+    [b_isEnclose]                      BIT            CONSTRAINT [DF_PR_PurchaseOrderDetails_b_isEnclose] DEFAULT ((0)) NULL,
+    CONSTRAINT [PK_PR_PurchaseOrderDetails] PRIMARY KEY CLUSTERED ([s_ID] ASC),
+    CONSTRAINT [FK_PR_PurchaseOrderDetails_LS_Products] FOREIGN KEY ([s_Product_ID]) REFERENCES [dbo].[LS_Products] ([s_ID]) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT [FK_PR_PurchaseOrderDetails_LS_PurchaseOrders] FOREIGN KEY ([s_OrderID]) REFERENCES [dbo].[LS_PurchaseOrders] ([s_ID]) ON DELETE CASCADE ON UPDATE CASCADE
+);
+

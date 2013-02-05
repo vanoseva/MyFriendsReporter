@@ -1,0 +1,1 @@
+﻿Create View V_FullOrder as Select *,'LS_Orders_2010_1' as s_TableName from LS_Orders_2010_1

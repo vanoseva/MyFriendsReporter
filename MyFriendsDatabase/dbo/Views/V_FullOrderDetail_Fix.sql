@@ -1,0 +1,1 @@
+﻿Create View V_FullOrderDetail_Fix as Select *,'PR_OrderDetail_Fix_2010_1' as s_TableName  from PR_OrderDetail_Fix_2010_1
