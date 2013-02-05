@@ -36,6 +36,7 @@ namespace MyFriendsReporter
             DebtDetail debtDetail = new DebtDetail();
             debtDetail.Owner = this;
             debtDetail.ShowDialog();
+
         }
     }
 }
